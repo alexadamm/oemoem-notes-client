@@ -44,10 +44,9 @@ export default class Login extends Component {
         body: JSON.stringify({ username, password }),
       });
 
-      const { data: { accessToken, refreshToken } } = responseJson;
+      const { data: { accessToken } } = responseJson;
 
       localStorage.setItem('accessToken', accessToken);
-      localStorage.setItem('refreshToken', refreshToken);
 
       await Router.push('/');
     } catch (error) {
