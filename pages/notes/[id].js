@@ -56,7 +56,7 @@ class Note extends Component {
   renderSuccess() {
     const { note, accessToken } = this.state;
     const {
-      id, title, body, createdAt, updatedAt, tags, username = 'undefined',
+      id, title, body, createdAt, updatedAt, tags, owner: { username } = 'undefined',
     } = note;
 
     if (!accessToken) {

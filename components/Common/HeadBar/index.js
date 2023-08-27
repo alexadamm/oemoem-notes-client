@@ -17,7 +17,7 @@ class HeadBar extends Component {
     if (window) {
       try {
         const accessToken = localStorage.getItem('accessToken');
-        const { id: userId } = jwtDecode(accessToken);
+        const { sub: userId } = jwtDecode(accessToken);
         const { data: { user } } = await fetcher(`${getBaseURL()}users/${userId}`);
         this.setState((prevState) => ({ ...prevState, user }));
       } catch {
